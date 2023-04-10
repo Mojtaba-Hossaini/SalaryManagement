@@ -1,6 +1,6 @@
 ﻿namespace SalaryManagementApplication.Dtos;
 
-public class NewSalary
+public class SalaryDto
 {
     public decimal BasicSalary { get; set; }
     public decimal Allowance { get; set; }

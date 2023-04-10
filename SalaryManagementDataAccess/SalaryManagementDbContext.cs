@@ -4,6 +4,7 @@ using Microsoft.Extensions.Options;
 using SalaryManagementDataAccess.Configs;
 using SalaryManagementDomainModel;
 using System.Data;
+using System.Reflection;
 
 namespace SalaryManagementDataAccess;
 
@@ -17,5 +18,11 @@ public class SalaryManagementDbContext : DbContext
     }
 
     public IDbConnection CreateConnection() => new SqlConnection(optionsMonitor.CurrentValue.DefaultConnection);
+    public DbSet<Empoyee> Empoyees { get; set; }
     public DbSet<Salary> Salaries { get; set; }
+
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
+    }
 }
