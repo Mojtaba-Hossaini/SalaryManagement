@@ -3,9 +3,9 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using SalaryManagementDomainModel;
 
 namespace SalaryManagementDataAccess.Configs;
-public class EmpoyeeEntityConfig : IEntityTypeConfiguration<Empoyee>
+public class EmpoyeeEntityConfig : IEntityTypeConfiguration<Employee>
 {
-    public void Configure(EntityTypeBuilder<Empoyee> builder)
+    public void Configure(EntityTypeBuilder<Employee> builder)
     {
         builder.HasQueryFilter(c => !c.IsDeleted);
         builder.Property<DateTime>("CreateDate").HasDefaultValueSql("getdate()");

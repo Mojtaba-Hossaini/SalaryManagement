@@ -2,6 +2,7 @@
 using SalaryManagementApplication.Config;
 using SalaryManagementApplication.Contracts;
 using SalaryManagementApplication.Dtos;
+using SalaryManagementApplication.Enums;
 
 namespace SalaryManagementApplication.Services;
 public class CalculateSalaryPayment : ICalculateSalaryPayment
@@ -12,7 +13,7 @@ public class CalculateSalaryPayment : ICalculateSalaryPayment
     {
         this.options=options;
     }
-    public SalaryResultDto Calculate(decimal basicSalary, decimal allowance, decimal transportation, string overTimeCalculator)
+    public SalaryResultDto Calculate(decimal basicSalary, decimal allowance, decimal transportation, OverTimeCalculator overTimeCalculator)
     {
         var totalSalary = basicSalary + allowance + transportation + GetCalculator.Instance(overTimeCalculator).Calculate(basicSalary, allowance);
         var tax = totalSalary * options.CurrentValue.Tax;

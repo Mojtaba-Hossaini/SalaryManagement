@@ -1,14 +1,15 @@
 ﻿using SalaryManagementApplication.Contracts;
+using SalaryManagementApplication.Enums;
 
 namespace SalaryManagementApplication.Services;
 
 public class GetCalculator
 {
-    public static IOvertimePolicies Instance(string calculator) => calculator switch
+    public static IOvertimePolicies Instance(OverTimeCalculator calculator) => calculator switch
     {
-        nameof(CalcurlatorA) => new CalcurlatorA(),
-        nameof(CalcurlatorB) => new CalcurlatorB(),
-        nameof(CalcurlatorC) => new CalcurlatorC(),
+        OverTimeCalculator.CalculatorA => new CalcurlatorA(),
+        OverTimeCalculator.CalculatorB => new CalcurlatorB(),
+        OverTimeCalculator.CalculatorC => new CalcurlatorC(),
         _ => null
     };
 }

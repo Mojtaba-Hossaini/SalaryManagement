@@ -1,6 +1,6 @@
-﻿namespace SalaryManagementDomainModel;
+﻿namespace SalaryManagementApplication.Dtos;
 
-public class Salary
+public class SalaryPaymentResultDto
 {
     public int SalaryId { get; set; }
     public decimal BasicSalary { get; set; }
@@ -9,8 +9,7 @@ public class Salary
     public decimal TotalSalary { get; set; }
     public decimal Tax { get; set; }
     public decimal FinalPayment { get; set; }
+    public string FirstName { get; set; }
+    public string LastName { get; set; }
     public DateTime Date { get; set; }
-    public bool IsDeleted { get; set; }
-    public int EmployeeId { get; set; }
-    public Employee Employee { get; set; }
 }

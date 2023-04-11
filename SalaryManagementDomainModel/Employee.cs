@@ -1,7 +1,7 @@
 ﻿namespace SalaryManagementDomainModel;
-public class Empoyee
+public class Employee
 {
-    public int EmpoyeeId { get; set; }
+    public int EmployeeId { get; set; }
     public string FirstName { get; set; }
     public string LastName { get; set; }
     public string FullName => FirstName + LastName;
